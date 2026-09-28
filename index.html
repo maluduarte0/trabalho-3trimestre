@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTroca & Doação — Moda Circular</title>
+  <meta name="description" content="Plataforma comunitária para doação e troca de roupas sustentável.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa">
+    <p class="marca">EcoTroca & Doação</p>
+    <nav>
+      <a href="#problema">O Projeto</a>
+      <a href="#cadastrar">Anunciar Peça</a>
+      <a href="#mural">Mural de Roupas</a>
+    </nav>
+  </div>
+</header>
+
+<section class="capa">
+  <img src="imagens/capa.jpg" alt="Roupas organizadas em cabides para doação e troca">
+  <div class="capa-texto">
+    <h1>Sua roupa usada tem valor para alguém. Doe ou Troque!</h1>
+    <p>Conectamos pessoas para dar um novo destino a roupas em bom estado, incentivando a moda circular e a solidariedade no nosso bairro.</p>
+    <a class="botao" href="#cadastrar">Anunciar Peça Agora</a>
+  </div>
+</section>
+
+<main>
+
+<section id="problema" class="bloco">
+  <h2>O Problema e Nossa Solução</h2>
+  <p class="largura-texto">Muitas roupas em perfeito estado ficam esquecidas no guarda-roupa enquanto outras pessoas precisam de vestuário ou gostariam de renovar o visual sem gastar nada.</p>
+  <p class="largura-texto"><b>Quem sofre com isso:</b> Pessoas e famílias da comunidade que precisam de acesso facilitado a vestuário de qualidade e quem deseja praticar o consumo sustentável.</p>
+  <p class="largura-texto"><b>Onde acontece:</b> Na nossa escola, bairro e comunidade local.</p>
+  <div class="galeria">
+    <figure>
+      <img src="imagens/foto1.jpg" alt="Cabideiro com roupas doadas">
+      <figcaption>Ponto de arrecadação e organização de doações.</figcaption>
+    </figure>
+    <figure>
+      <img src="imagens/foto2.jpg" alt="Pessoas trocando peças de roupas em evento comunitário">
+      <figcaption>Encontro de trocas e moda circular no bairro.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="bloco">
+  <h2>Impacto do Projeto</h2>
+  <p class="largura-texto"><b>Indicador principal:</b> Número de peças de roupas cadastradas para doação ou troca em 4 semanas.</p>
+  <div class="painel" id="painel"></div>
+</section>
+
+<section id="cadastrar" class="bloco">
+  <h2>Cadastrar Roupas (Doação ou Troca)</h2>
+  <form id="formulario" class="formulario">
+    <div class="campo">
+      <label for="tituloDaAcao">Nome/Título da Peça</label>
+      <input type="text" id="tituloDaAcao" placeholder="Ex: Jaqueta Jeans Escura" maxlength="80" required>
+    </div>
+    
+    <div class="campo">
+      <label for="tipoAcao">Tipo de Ação</label>
+      <select id="tipoAcao" required>
+        <option value="">Selecione...</option>
+        <option>Doação</option>
+        <option>Troca</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="categoria">Categoria</label>
+      <select id="categoria" required>
+        <option value="">Selecione...</option>
+        <option>Camisas e Camisetas</option>
+        <option>Calças e Bermudas</option>
+        <option>Casacos e Agasalhos</option>
+        <option>Calçados</option>
+        <option>Acessórios</option>
+        <option>Outros</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="tamanho">Tamanho</label>
+      <select id="tamanho" required>
+        <option value="">Selecione...</option>
+        <option>PP</option>
+        <option>P</option>
+        <option>M</option>
+        <option>G</option>
+        <option>GG</option>
+        <option>Infantil</option>
+        <option>Único</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label for="local">Ponto de Retirada / Contato</label>
+      <input type="text" id="local" placeholder="Ex: Retirar na Escola - Sala 3" maxlength="80" required>
+    </div>
+
+    <div class="campo largo">
+      <label for="oQueFoiFeito">Descrição e Estado de Conservação</label>
+      <textarea id="oQueFoiFeito" rows="3" placeholder="Ex: Sem rasgos, pouco usada, troco por camiseta equivalente ou doação livre." maxlength="300" required></textarea>
+    </div>
+
+    <button type="submit" class="botao">Salvar Anúncio</button>
+    <p id="aviso" class="aviso" role="status"></p>
+  </form>
+</section>
+
+<section id="mural" class="bloco">
+  <h2>Mural de Peças Disponíveis</h2>
+  <div class="ferramentas">
+    <div class="ferramenta">
+      <label for="busca">Buscar peça</label>
+      <input type="text" id="busca" placeholder="Digite uma palavra (ex: casaco)">
+    </div>
+    <div class="ferramenta">
+      <label for="filtro">Filtrar por Categoria</label>
+      <select id="filtro">
+        <option value="todas">Todas as categorias</option>
+        <option>Camisas e Camisetas</option>
+        <option>Calças e Bermudas</option>
+        <option>Casacos e Agasalhos</option>
+        <option>Calçados</option>
+        <option>Acessórios</option>
+        <option>Outros</option>
+      </select>
+    </div>
+    <div class="ferramenta">
+      <label for="exportar">Gerenciar Dados</label>
+      <div class="grupo-botoes">
+        <button type="button" id="exportar" class="botao-fino">Baixar Backup</button>
+        <label for="importar" class="botao-fino">Carregar Backup</label>
+        <input type="file" id="importar" accept="application/json" hidden>
+        <button type="button" id="limpar" class="botao-fino perigo">Apagar Tudo</button>
+      </div>
+    </div>
+  </div>
+  <div id="lista" class="lista"></div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <p>Projeto Desenvolvido pela Equipe de Programação | Turma 2º Ano | Escola Técnica</p>
+  <p class="miudo">ODS 12: Consumo e Produção Responsáveis. Protótipo escolar com armazenamento local via browser.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
